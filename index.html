@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о задолженности</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0b7dda;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Информация о задолженности</h1>
+        <form id="debtForm">
+            <label for="fullName">ФИО:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Введите полное имя" required>
+
+            <label for="idNumber">Номер документа:</label>
+            <input type="text" id="idNumber" name="idNumber" placeholder="Введите номер документа" required>
+
+            <button type="submit">Проверить задолженность</button>
+        </form>
+
+        <div class="result" id="result" style="display: none;">
+            Сумма задолженности: 15 320 ₽
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('debtForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
